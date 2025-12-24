@@ -1,390 +1,573 @@
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ScreenGui"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
 
-local MainFrame = Instance.new("Frame")
-MainFrame.Name = "MainFrame"
-MainFrame.Position = UDim2.new(0, 0, 0.0186335, 0)
-MainFrame.Size = UDim2.new(0, 1470, 0, 780)
-MainFrame.BackgroundColor3 = Color3.new(1, 1, 1)
-MainFrame.BackgroundTransparency = 1
-MainFrame.BorderSizePixel = 0
-MainFrame.BorderColor3 = Color3.new(0, 0, 0)
-MainFrame.ZIndex = 10
-MainFrame.Transparency = 1
-MainFrame.Active = true
-MainFrame.Parent = ScreenGui
+-- Instances: 48 | Scripts: 4 | Modules: 0 | Tags: 0
+local G2L = {};
 
-local Pages = Instance.new("Folder")
-Pages.Name = "Pages"
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
-Pages.Parent = MainFrame
 
-local PlayersPage = Instance.new("Frame")
-PlayersPage.Name = "PlayersPage"
-PlayersPage.Position = UDim2.new(0.362943, 0, 0.00880839, 0)
-PlayersPage.Size = UDim2.new(0, 361, 0, 761)
-PlayersPage.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
-PlayersPage.BorderSizePixel = 0
-PlayersPage.BorderColor3 = Color3.new(0, 0, 0)
-PlayersPage.Parent = Pages
+-- StarterGui.ScreenGui.MainFrame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["Active"] = true;
+G2L["2"]["ZIndex"] = 10;
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["Size"] = UDim2.new(0, 1470, 0, 780);
+G2L["2"]["Position"] = UDim2.new(0, 0, 0.01863, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[MainFrame]];
+G2L["2"]["BackgroundTransparency"] = 1;
 
-local UICorner = Instance.new("UICorner")
-UICorner.Name = "UICorner"
 
-UICorner.Parent = PlayersPage
+-- StarterGui.ScreenGui.MainFrame.page
+G2L["3"] = Instance.new("LocalScript", G2L["2"]);
+G2L["3"]["Name"] = [[page]];
 
-local UIGradient = Instance.new("UIGradient")
-UIGradient.Name = "UIGradient"
-UIGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(0.00865052, Color3.new(0.784314, 0.780392, 0.780392)), ColorSequenceKeypoint.new(0.628028, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(1, Color3.new(1, 1, 1))})
-UIGradient.Parent = PlayersPage
 
-local TextBox = Instance.new("TextBox")
-TextBox.Name = "TextBox"
-TextBox.Position = UDim2.new(0.0613973, 0, 0.164358, 0)
-TextBox.Size = UDim2.new(0, 317, 0, 29)
-TextBox.BackgroundColor3 = Color3.new(0.317647, 0.317647, 0.317647)
-TextBox.BorderSizePixel = 0
-TextBox.BorderColor3 = Color3.new(0, 0, 0)
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.new(0, 0, 0)
-TextBox.TextSize = 14
-TextBox.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextBox.Parent = PlayersPage
+-- StarterGui.ScreenGui.MainFrame.LocalScript
+G2L["4"] = Instance.new("LocalScript", G2L["2"]);
 
-local UICorner2 = Instance.new("UICorner")
-UICorner2.Name = "UICorner"
 
-UICorner2.Parent = TextBox
 
-local TextButton = Instance.new("TextButton")
-TextButton.Name = "TextButton"
-TextButton.Position = UDim2.new(0.337539, 0, -1.10345, 0)
-TextButton.Size = UDim2.new(0, 102, 0, 32)
-TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
-TextButton.BackgroundTransparency = 1
-TextButton.BorderSizePixel = 0
-TextButton.BorderColor3 = Color3.new(0, 0, 0)
-TextButton.Transparency = 1
-TextButton.Text = "Accept Delay"
-TextButton.TextColor3 = Color3.new(1, 1, 1)
-TextButton.TextSize = 20
-TextButton.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton.Parent = TextBox
+-- StarterGui.ScreenGui.MainFrame.LocalScript
+G2L["5"] = Instance.new("LocalScript", G2L["2"]);
 
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Name = "UIStroke"
-UIStroke.Color = Color3.new(0.309804, 0.309804, 0.309804)
-UIStroke.Thickness = 5
-UIStroke.Transparency = 0.20999999344348907
-UIStroke.Parent = PlayersPage
 
-local TextBox2 = Instance.new("TextBox")
-TextBox2.Name = "TextBox"
-TextBox2.Position = UDim2.new(0.0613973, 0, 0.24871, 0)
-TextBox2.Size = UDim2.new(0, 317, 0, 29)
-TextBox2.BackgroundColor3 = Color3.new(0.317647, 0.317647, 0.317647)
-TextBox2.BorderSizePixel = 0
-TextBox2.BorderColor3 = Color3.new(0, 0, 0)
-TextBox2.Text = ""
-TextBox2.TextColor3 = Color3.new(0, 0, 0)
-TextBox2.TextSize = 14
-TextBox2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextBox2.Parent = PlayersPage
 
-local UICorner3 = Instance.new("UICorner")
-UICorner3.Name = "UICorner"
+-- StarterGui.ScreenGui.MainFrame.Pages
+G2L["6"] = Instance.new("Folder", G2L["2"]);
+G2L["6"]["Name"] = [[Pages]];
 
-UICorner3.Parent = TextBox2
 
-local TextButton2 = Instance.new("TextButton")
-TextButton2.Name = "TextButton"
-TextButton2.Position = UDim2.new(0.334385, 0, -1.10345, 0)
-TextButton2.Size = UDim2.new(0, 102, 0, 32)
-TextButton2.BackgroundColor3 = Color3.new(1, 1, 1)
-TextButton2.BackgroundTransparency = 1
-TextButton2.BorderSizePixel = 0
-TextButton2.BorderColor3 = Color3.new(0, 0, 0)
-TextButton2.Transparency = 1
-TextButton2.Text = "Confirm Delay"
-TextButton2.TextColor3 = Color3.new(1, 1, 1)
-TextButton2.TextSize = 20
-TextButton2.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton2.Parent = TextBox2
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage
+G2L["7"] = Instance.new("Frame", G2L["6"]);
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(51, 51, 51);
+G2L["7"]["Size"] = UDim2.new(0, 361, 0, 761);
+G2L["7"]["Position"] = UDim2.new(0.36294, 0, 0.00881, 0);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Name"] = [[PlayersPage]];
 
-local TextButton3 = Instance.new("TextButton")
-TextButton3.Name = "TextButton"
-TextButton3.Position = UDim2.new(0.201634, 0, 0.275997, 0)
-TextButton3.Size = UDim2.new(0, 209, 0, 50)
-TextButton3.BackgroundColor3 = Color3.new(1, 1, 1)
-TextButton3.BackgroundTransparency = 1
-TextButton3.BorderSizePixel = 0
-TextButton3.BorderColor3 = Color3.new(1, 1, 1)
-TextButton3.Transparency = 1
-TextButton3.Text = "Nickname"
-TextButton3.TextColor3 = Color3.new(1, 1, 1)
-TextButton3.TextSize = 20
-TextButton3.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton3.Parent = PlayersPage
 
-local TextBox3 = Instance.new("TextBox")
-TextBox3.Name = "TextBox"
-TextBox3.Position = UDim2.new(0.0586348, 0, 0.325776, 0)
-TextBox3.Size = UDim2.new(0, 317, 0, 29)
-TextBox3.BackgroundColor3 = Color3.new(0.317647, 0.317647, 0.317647)
-TextBox3.BorderSizePixel = 0
-TextBox3.BorderColor3 = Color3.new(0, 0, 0)
-TextBox3.Text = ""
-TextBox3.TextColor3 = Color3.new(0, 0, 0)
-TextBox3.TextSize = 14
-TextBox3.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextBox3.Parent = PlayersPage
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.UICorner
+G2L["8"] = Instance.new("UICorner", G2L["7"]);
 
-local UICorner4 = Instance.new("UICorner")
-UICorner4.Name = "UICorner"
 
-UICorner4.Parent = TextBox3
 
-local TextButton4 = Instance.new("TextButton")
-TextButton4.Name = "TextButton"
-TextButton4.Position = UDim2.new(0.149148, 0, 0.386037, 0)
-TextButton4.Size = UDim2.new(0, 247, 0, 50)
-TextButton4.BackgroundColor3 = Color3.new(0.176471, 0.839216, 0.113725)
-TextButton4.BorderSizePixel = 0
-TextButton4.BorderColor3 = Color3.new(0, 0, 0)
-TextButton4.Text = "Select Player From Trade"
-TextButton4.TextColor3 = Color3.new(1, 1, 1)
-TextButton4.TextSize = 22
-TextButton4.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton4.Parent = PlayersPage
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.UIGradient
+G2L["9"] = Instance.new("UIGradient", G2L["7"]);
+G2L["9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(0.009, Color3.fromRGB(201, 200, 200)),ColorSequenceKeypoint.new(0.628, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(255, 255, 255))};
 
-local UIGradient2 = Instance.new("UIGradient")
-UIGradient2.Name = "UIGradient"
 
-UIGradient2.Parent = TextButton4
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox
+G2L["a"] = Instance.new("TextBox", G2L["7"]);
+G2L["a"]["CursorPosition"] = -1;
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["TextSize"] = 14;
+G2L["a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["Size"] = UDim2.new(0, 317, 0, 29);
+G2L["a"]["Position"] = UDim2.new(0.0614, 0, 0.16436, 0);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[]];
 
-local UICorner5 = Instance.new("UICorner")
-UICorner5.Name = "UICorner"
 
-UICorner5.Parent = TextButton4
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
 
-local UIStroke2 = Instance.new("UIStroke")
-UIStroke2.Name = "UIStroke"
-UIStroke2.Color = Color3.new(0.0666667, 0.713726, 0.054902)
-UIStroke2.Parent = TextButton4
 
-local TextButton5 = Instance.new("TextButton")
-TextButton5.Name = "TextButton"
-TextButton5.Position = UDim2.new(0.270711, 0, 0.465133, 0)
-TextButton5.Size = UDim2.new(0, 164, 0, 50)
-TextButton5.BackgroundColor3 = Color3.new(0.188235, 0.839216, 0.113725)
-TextButton5.BorderSizePixel = 0
-TextButton5.BorderColor3 = Color3.new(0, 0, 0)
-TextButton5.Text = "Start Trade"
-TextButton5.TextColor3 = Color3.new(1, 1, 1)
-TextButton5.TextSize = 22
-TextButton5.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton5.Parent = PlayersPage
 
-local UIGradient3 = Instance.new("UIGradient")
-UIGradient3.Name = "UIGradient"
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox.TextButton
+G2L["c"] = Instance.new("TextButton", G2L["a"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["TextSize"] = 20;
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Roboto.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["Size"] = UDim2.new(0, 102, 0, 32);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Text"] = [[Accept Delay]];
+G2L["c"]["Position"] = UDim2.new(0.33754, 0, -1.10345, 0);
 
-UIGradient3.Parent = TextButton5
 
-local UICorner6 = Instance.new("UICorner")
-UICorner6.Name = "UICorner"
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.UIStroke
+G2L["d"] = Instance.new("UIStroke", G2L["7"]);
+G2L["d"]["Transparency"] = 0.21;
+G2L["d"]["Thickness"] = 5;
+G2L["d"]["Color"] = Color3.fromRGB(80, 80, 80);
 
-UICorner6.Parent = TextButton5
 
-local UIStroke3 = Instance.new("UIStroke")
-UIStroke3.Name = "UIStroke"
-UIStroke3.Color = Color3.new(0.0666667, 0.713726, 0.054902)
-UIStroke3.Parent = TextButton5
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox
+G2L["e"] = Instance.new("TextBox", G2L["7"]);
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["TextSize"] = 14;
+G2L["e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["e"]["Size"] = UDim2.new(0, 317, 0, 29);
+G2L["e"]["Position"] = UDim2.new(0.0614, 0, 0.24871, 0);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Text"] = [[]];
 
-local PlayerListFrame = Instance.new("Frame")
-PlayerListFrame.Name = "PlayerListFrame"
-PlayerListFrame.Position = UDim2.new(0.0586274, 0, 0.551905, 0)
-PlayerListFrame.Size = UDim2.new(0, 325, 0, 321)
-PlayerListFrame.BackgroundColor3 = Color3.new(0.301961, 0.301961, 0.301961)
-PlayerListFrame.BorderSizePixel = 0
-PlayerListFrame.BorderColor3 = Color3.new(0, 0, 0)
-PlayerListFrame.Parent = PlayersPage
 
-local UICorner7 = Instance.new("UICorner")
-UICorner7.Name = "UICorner"
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox.UICorner
+G2L["f"] = Instance.new("UICorner", G2L["e"]);
 
-UICorner7.Parent = PlayerListFrame
 
-local UIListLayout = Instance.new("UIListLayout")
-UIListLayout.Name = "UIListLayout"
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Parent = PlayerListFrame
 
-local ScrollingFrame = Instance.new("ScrollingFrame")
-ScrollingFrame.Name = "ScrollingFrame"
-ScrollingFrame.Size = UDim2.new(0, 325, 0, 321)
-ScrollingFrame.BackgroundColor3 = Color3.new(1, 1, 1)
-ScrollingFrame.BackgroundTransparency = 1
-ScrollingFrame.BorderSizePixel = 0
-ScrollingFrame.BorderColor3 = Color3.new(1, 1, 1)
-ScrollingFrame.Transparency = 1
-ScrollingFrame.Active = true
-ScrollingFrame.ScrollBarImageColor3 = Color3.new(0, 0, 0)
-ScrollingFrame.ScrollBarThickness = 10
-ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-ScrollingFrame.Parent = PlayerListFrame
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox.TextButton
+G2L["10"] = Instance.new("TextButton", G2L["e"]);
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["TextSize"] = 20;
+G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/Roboto.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["10"]["BackgroundTransparency"] = 1;
+G2L["10"]["Size"] = UDim2.new(0, 102, 0, 32);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Text"] = [[Confirm Delay]];
+G2L["10"]["Position"] = UDim2.new(0.33438, 0, -1.10345, 0);
 
-local TextButton6 = Instance.new("TextButton")
-TextButton6.Name = "TextButton"
-TextButton6.Position = UDim2.new(0.0276923, 0, 0.0132399, 0)
-TextButton6.Size = UDim2.new(0, 299, 0, 50)
-TextButton6.BackgroundColor3 = Color3.new(0.737255, 0.8, 0.333333)
-TextButton6.BorderSizePixel = 0
-TextButton6.BorderColor3 = Color3.new(0, 0, 0)
-TextButton6.Text = "bezonixa1"
-TextButton6.TextColor3 = Color3.new(1, 1, 1)
-TextButton6.TextSize = 22
-TextButton6.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton6.Parent = ScrollingFrame
 
-local UICorner8 = Instance.new("UICorner")
-UICorner8.Name = "UICorner"
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton
+G2L["11"] = Instance.new("TextButton", G2L["7"]);
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextSize"] = 20;
+G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/Roboto.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["11"]["BackgroundTransparency"] = 1;
+G2L["11"]["Size"] = UDim2.new(0, 209, 0, 50);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["Text"] = [[Nickname]];
+G2L["11"]["Position"] = UDim2.new(0.20163, 0, 0.276, 0);
 
-UICorner8.Parent = TextButton6
 
-local TextButton7 = Instance.new("TextButton")
-TextButton7.Name = "TextButton"
-TextButton7.Position = UDim2.new(0.02863, 0, 0.388338, 0)
-TextButton7.Size = UDim2.new(0, 299, 0, 50)
-TextButton7.BackgroundColor3 = Color3.new(0.180392, 0.898039, 0.0509804)
-TextButton7.BorderSizePixel = 0
-TextButton7.BorderColor3 = Color3.new(0, 0, 0)
-TextButton7.Text = "TTsla_va9"
-TextButton7.TextColor3 = Color3.new(1, 1, 1)
-TextButton7.TextSize = 22
-TextButton7.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton7.Parent = ScrollingFrame
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox
+G2L["12"] = Instance.new("TextBox", G2L["7"]);
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextSize"] = 14;
+G2L["12"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(82, 82, 82);
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["Size"] = UDim2.new(0, 317, 0, 29);
+G2L["12"]["Position"] = UDim2.new(0.05863, 0, 0.32578, 0);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[]];
 
-local UICorner9 = Instance.new("UICorner")
-UICorner9.Name = "UICorner"
 
-UICorner9.Parent = TextButton7
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextBox.UICorner
+G2L["13"] = Instance.new("UICorner", G2L["12"]);
 
-local TextButton8 = Instance.new("TextButton")
-TextButton8.Name = "TextButton"
-TextButton8.Position = UDim2.new(0.02863, 0, 0.198868, 0)
-TextButton8.Size = UDim2.new(0, 299, 0, 50)
-TextButton8.BackgroundColor3 = Color3.new(1, 0, 1)
-TextButton8.BorderSizePixel = 0
-TextButton8.BorderColor3 = Color3.new(0, 0, 0)
-TextButton8.Text = "suntlaflare"
-TextButton8.TextColor3 = Color3.new(1, 1, 1)
-TextButton8.TextSize = 22
-TextButton8.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton8.Parent = ScrollingFrame
 
-local UICorner10 = Instance.new("UICorner")
-UICorner10.Name = "UICorner"
 
-UICorner10.Parent = TextButton8
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton
+G2L["14"] = Instance.new("TextButton", G2L["7"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["TextSize"] = 22;
+G2L["14"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(46, 215, 30);
+G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["14"]["Size"] = UDim2.new(0, 247, 0, 50);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["Text"] = [[Select Player From Trade]];
+G2L["14"]["Position"] = UDim2.new(0.14915, 0, 0.38604, 0);
 
-local TextButton9 = Instance.new("TextButton")
-TextButton9.Name = "TextButton"
-TextButton9.Position = UDim2.new(0.221607, 0, -0.0105125, 0)
-TextButton9.Size = UDim2.new(0, 200, 0, 50)
-TextButton9.BackgroundColor3 = Color3.new(1, 1, 1)
-TextButton9.BackgroundTransparency = 1
-TextButton9.BorderSizePixel = 0
-TextButton9.BorderColor3 = Color3.new(0, 0, 0)
-TextButton9.Transparency = 1
-TextButton9.Text = "misyafleur On Discord"
-TextButton9.TextColor3 = Color3.new(1, 1, 1)
-TextButton9.TextSize = 20
-TextButton9.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-TextButton9.Parent = PlayersPage
 
-local BlockPage = Instance.new("Frame")
-BlockPage.Name = "BlockPage"
-BlockPage.Size = UDim2.new(0, 100, 0, 100)
-BlockPage.BackgroundColor3 = Color3.new(1, 1, 1)
-BlockPage.BackgroundTransparency = 1
-BlockPage.BorderSizePixel = 0
-BlockPage.BorderColor3 = Color3.new(0, 0, 0)
-BlockPage.Visible = false
-BlockPage.Transparency = 1
-BlockPage.Parent = Pages
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton.UIGradient
+G2L["15"] = Instance.new("UIGradient", G2L["14"]);
 
-local SpawnerPage = Instance.new("Frame")
-SpawnerPage.Name = "SpawnerPage"
-SpawnerPage.Size = UDim2.new(0, 100, 0, 100)
-SpawnerPage.BackgroundColor3 = Color3.new(1, 1, 1)
-SpawnerPage.BackgroundTransparency = 1
-SpawnerPage.BorderSizePixel = 0
-SpawnerPage.BorderColor3 = Color3.new(0, 0, 0)
-SpawnerPage.Visible = false
-SpawnerPage.Transparency = 1
-SpawnerPage.Parent = Pages
 
-local Buttons = Instance.new("Folder")
-Buttons.Name = "Buttons"
 
-Buttons.Parent = MainFrame
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton.UICorner
+G2L["16"] = Instance.new("UICorner", G2L["14"]);
 
-local PlayersButton = Instance.new("TextButton")
-PlayersButton.Name = "PlayersButton"
-PlayersButton.Position = UDim2.new(0.377551, 0, 0.0628205, 0)
-PlayersButton.Size = UDim2.new(0, 84, 0, 50)
-PlayersButton.BackgroundColor3 = Color3.new(0.0980392, 0.760784, 1)
-PlayersButton.BorderSizePixel = 0
-PlayersButton.BorderColor3 = Color3.new(0, 0, 0)
-PlayersButton.Text = "Players"
-PlayersButton.TextColor3 = Color3.new(1, 1, 1)
-PlayersButton.TextSize = 22
-PlayersButton.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-PlayersButton.TextWrapped = true
-PlayersButton.Parent = Buttons
 
-local UICorner11 = Instance.new("UICorner")
-UICorner11.Name = "UICorner"
 
-UICorner11.Parent = PlayersButton
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton.UIStroke
+G2L["17"] = Instance.new("UIStroke", G2L["14"]);
+G2L["17"]["Color"] = Color3.fromRGB(18, 183, 15);
 
-local BlockButton = Instance.new("TextButton")
-BlockButton.Name = "BlockButton"
-BlockButton.Position = UDim2.new(0.457143, 0, 0.0628205, 0)
-BlockButton.Size = UDim2.new(0, 84, 0, 50)
-BlockButton.BackgroundColor3 = Color3.new(0.721569, 0, 0)
-BlockButton.BorderSizePixel = 0
-BlockButton.BorderColor3 = Color3.new(0, 0, 0)
-BlockButton.Text = "Block"
-BlockButton.TextColor3 = Color3.new(1, 1, 1)
-BlockButton.TextSize = 22
-BlockButton.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-BlockButton.TextWrapped = true
-BlockButton.Parent = Buttons
 
-local UICorner12 = Instance.new("UICorner")
-UICorner12.Name = "UICorner"
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton
+G2L["18"] = Instance.new("TextButton", G2L["7"]);
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextSize"] = 22;
+G2L["18"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(49, 215, 30);
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["18"]["Size"] = UDim2.new(0, 164, 0, 50);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Text"] = [[Start Trade]];
+G2L["18"]["Position"] = UDim2.new(0.27071, 0, 0.46513, 0);
 
-UICorner12.Parent = BlockButton
 
-local SpawnerButton = Instance.new("TextButton")
-SpawnerButton.Name = "SpawnerButton"
-SpawnerButton.Position = UDim2.new(0.535374, 0, 0.0628205, 0)
-SpawnerButton.Size = UDim2.new(0, 84, 0, 50)
-SpawnerButton.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
-SpawnerButton.BorderSizePixel = 0
-SpawnerButton.BorderColor3 = Color3.new(0, 0, 0)
-SpawnerButton.Text = "Spawner"
-SpawnerButton.TextColor3 = Color3.new(1, 1, 1)
-SpawnerButton.TextSize = 22
-SpawnerButton.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-SpawnerButton.TextWrapped = true
-SpawnerButton.Parent = Buttons
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton.UIGradient
+G2L["19"] = Instance.new("UIGradient", G2L["18"]);
 
-local UICorner13 = Instance.new("UICorner")
-UICorner13.Name = "UICorner"
 
-UICorner13.Parent = SpawnerButton
 
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton.UICorner
+G2L["1a"] = Instance.new("UICorner", G2L["18"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton.UIStroke
+G2L["1b"] = Instance.new("UIStroke", G2L["18"]);
+G2L["1b"]["Color"] = Color3.fromRGB(18, 183, 15);
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame
+G2L["1c"] = Instance.new("Frame", G2L["7"]);
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(78, 78, 78);
+G2L["1c"]["Size"] = UDim2.new(0, 325, 0, 321);
+G2L["1c"]["Position"] = UDim2.new(0.05863, 0, 0.55191, 0);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Name"] = [[PlayerListFrame]];
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.LocalScript
+G2L["1d"] = Instance.new("LocalScript", G2L["1c"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.UICorner
+G2L["1e"] = Instance.new("UICorner", G2L["1c"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.UIListLayout
+G2L["1f"] = Instance.new("UIListLayout", G2L["1c"]);
+G2L["1f"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.ScrollingFrame
+G2L["20"] = Instance.new("ScrollingFrame", G2L["1c"]);
+G2L["20"]["Active"] = true;
+G2L["20"]["BorderSizePixel"] = 0;
+G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["20"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["20"]["Size"] = UDim2.new(0, 325, 0, 321);
+G2L["20"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["20"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["20"]["ScrollBarThickness"] = 10;
+G2L["20"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.ScrollingFrame.TextButton
+G2L["21"] = Instance.new("TextButton", G2L["20"]);
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["TextSize"] = 22;
+G2L["21"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(189, 205, 86);
+G2L["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["21"]["Size"] = UDim2.new(0, 299, 0, 50);
+G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["Text"] = [[bezonixa1]];
+G2L["21"]["Position"] = UDim2.new(0.02769, 0, 0.01324, 0);
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.ScrollingFrame.TextButton.UICorner
+G2L["22"] = Instance.new("UICorner", G2L["21"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.ScrollingFrame.TextButton
+G2L["23"] = Instance.new("TextButton", G2L["20"]);
+G2L["23"]["BorderSizePixel"] = 0;
+G2L["23"]["TextSize"] = 22;
+G2L["23"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(47, 230, 14);
+G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["23"]["Size"] = UDim2.new(0, 299, 0, 50);
+G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["Text"] = [[TTsla_va9]];
+G2L["23"]["Position"] = UDim2.new(0.02863, 0, 0.38834, 0);
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.ScrollingFrame.TextButton.UICorner
+G2L["24"] = Instance.new("UICorner", G2L["23"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.ScrollingFrame.TextButton
+G2L["25"] = Instance.new("TextButton", G2L["20"]);
+G2L["25"]["BorderSizePixel"] = 0;
+G2L["25"]["TextSize"] = 22;
+G2L["25"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["25"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 255);
+G2L["25"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["25"]["Size"] = UDim2.new(0, 299, 0, 50);
+G2L["25"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["25"]["Text"] = [[suntlaflare]];
+G2L["25"]["Position"] = UDim2.new(0.02863, 0, 0.19887, 0);
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.ScrollingFrame.TextButton.UICorner
+G2L["26"] = Instance.new("UICorner", G2L["25"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.TextButton
+G2L["27"] = Instance.new("TextButton", G2L["7"]);
+G2L["27"]["BorderSizePixel"] = 0;
+G2L["27"]["TextSize"] = 20;
+G2L["27"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["27"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["27"]["BackgroundTransparency"] = 1;
+G2L["27"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["27"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["27"]["Text"] = [[misyafleur On Discord]];
+G2L["27"]["Position"] = UDim2.new(0.22161, 0, -0.01051, 0);
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.BlockPage
+G2L["28"] = Instance.new("Frame", G2L["6"]);
+G2L["28"]["Visible"] = false;
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["Size"] = UDim2.new(0, 100, 0, 100);
+G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["Name"] = [[BlockPage]];
+G2L["28"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ScreenGui.MainFrame.Pages.SpawnerPage
+G2L["29"] = Instance.new("Frame", G2L["6"]);
+G2L["29"]["Visible"] = false;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["Size"] = UDim2.new(0, 100, 0, 100);
+G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["Name"] = [[SpawnerPage]];
+G2L["29"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ScreenGui.MainFrame.Buttons
+G2L["2a"] = Instance.new("Folder", G2L["2"]);
+G2L["2a"]["Name"] = [[Buttons]];
+
+
+-- StarterGui.ScreenGui.MainFrame.Buttons.PlayersButton
+G2L["2b"] = Instance.new("TextButton", G2L["2a"]);
+G2L["2b"]["TextWrapped"] = true;
+G2L["2b"]["BorderSizePixel"] = 0;
+G2L["2b"]["TextSize"] = 22;
+G2L["2b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(26, 195, 255);
+G2L["2b"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2b"]["Size"] = UDim2.new(0, 84, 0, 50);
+G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["Text"] = [[Players]];
+G2L["2b"]["Name"] = [[PlayersButton]];
+G2L["2b"]["Position"] = UDim2.new(0.37755, 0, 0.06282, 0);
+
+
+-- StarterGui.ScreenGui.MainFrame.Buttons.PlayersButton.UICorner
+G2L["2c"] = Instance.new("UICorner", G2L["2b"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Buttons.BlockButton
+G2L["2d"] = Instance.new("TextButton", G2L["2a"]);
+G2L["2d"]["TextWrapped"] = true;
+G2L["2d"]["BorderSizePixel"] = 0;
+G2L["2d"]["TextSize"] = 22;
+G2L["2d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(185, 0, 0);
+G2L["2d"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2d"]["Size"] = UDim2.new(0, 84, 0, 50);
+G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2d"]["Text"] = [[Block]];
+G2L["2d"]["Name"] = [[BlockButton]];
+G2L["2d"]["Position"] = UDim2.new(0.45714, 0, 0.06282, 0);
+
+
+-- StarterGui.ScreenGui.MainFrame.Buttons.BlockButton.UICorner
+G2L["2e"] = Instance.new("UICorner", G2L["2d"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.Buttons.SpawnerButton
+G2L["2f"] = Instance.new("TextButton", G2L["2a"]);
+G2L["2f"]["TextWrapped"] = true;
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["TextSize"] = 22;
+G2L["2f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(86, 171, 0);
+G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2f"]["Size"] = UDim2.new(0, 84, 0, 50);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Text"] = [[Spawner]];
+G2L["2f"]["Name"] = [[SpawnerButton]];
+G2L["2f"]["Position"] = UDim2.new(0.53537, 0, 0.06282, 0);
+
+
+-- StarterGui.ScreenGui.MainFrame.Buttons.SpawnerButton.UICorner
+G2L["30"] = Instance.new("UICorner", G2L["2f"]);
+
+
+
+-- StarterGui.ScreenGui.MainFrame.page
+local function C_3()
+local script = G2L["3"];
+	local pagesFolder = script.Parent.Pages
+	local buttonsFolder = script.Parent.Buttons
+	
+	local function hideAllPages()
+		for _, page in ipairs(pagesFolder:GetChildren()) do
+			if page:IsA("Frame") then
+				page.Visible = false
+			end
+		end
+	end
+	
+	buttonsFolder.PlayersButton.MouseButton1Click:Connect(function()
+		hideAllPages()
+		pagesFolder.PlayersPage.Visible = true
+	end)
+	
+	buttonsFolder.BlockButton.MouseButton1Click:Connect(function()
+		hideAllPages()
+		pagesFolder.BlockPage.Visible = true
+	end)
+	
+	buttonsFolder.SpawnerButton.MouseButton1Click:Connect(function()
+		hideAllPages()
+		pagesFolder.SpawnerPage.Visible = true
+	end)
+end;
+task.spawn(C_3);
+-- StarterGui.ScreenGui.MainFrame.LocalScript
+local function C_4()
+local script = G2L["4"];
+	-- LocalScript внутри вашего Frame
+	local UserInputService = game:GetService("UserInputService")
+	local frame = script.Parent
+	
+	local dragging = false
+	local dragStart
+	local startPos
+	
+	-- Когда начинаем кликать по фрейму
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	-- Пока двигаем мышь
+	frame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragging then
+				local delta = input.Position - dragStart
+				frame.Position = UDim2.new(
+					startPos.X.Scale,
+					startPos.X.Offset + delta.X,
+					startPos.Y.Scale,
+					startPos.Y.Offset + delta.Y
+				)
+			end
+		end
+	end)
+end;
+task.spawn(C_4);
+-- StarterGui.ScreenGui.MainFrame.LocalScript
+local function C_5()
+local script = G2L["5"];
+	-- LocalScript внутри вашего Frame
+	local UserInputService = game:GetService("UserInputService")
+	local frame = script.Parent
+	
+	local dragging = false
+	local dragStart
+	local startPos
+	
+	-- Когда начинаем кликать по фрейму
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	-- Пока двигаем мышь
+	frame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			if dragging then
+				local delta = input.Position - dragStart
+				frame.Position = UDim2.new(
+					startPos.X.Scale,
+					startPos.X.Offset + delta.X,
+					startPos.Y.Scale,
+					startPos.Y.Offset + delta.Y
+				)
+			end
+		end
+	end)
+end;
+task.spawn(C_5);
+-- StarterGui.ScreenGui.MainFrame.Pages.PlayersPage.PlayerListFrame.LocalScript
+local function C_1d()
+local script = G2L["1d"];
+	local Players = game:GetService("Players")
+	local playerListFrame = script.Parent:WaitForChild("ScrollingFrame")
+	local uiListLayout = playerListFrame:WaitForChild("UIListLayout")
+	
+	-- Функция создания элемента для игрока
+	local function addPlayer(player)
+		local textLabel = Instance.new("TextLabel")
+		textLabel.Size = UDim2.new(1, 0, 0, 30)
+		textLabel.BackgroundTransparency = 1
+		textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		textLabel.TextScaled = true
+		textLabel.Text = player.Name
+		textLabel.Parent = playerListFrame
+	end
+	
+	-- Добавляем всех текущих игроков
+	for _, player in pairs(Players:GetPlayers()) do
+		addPlayer(player)
+	end
+	
+	-- Добавляем новых игроков по мере их присоединения
+	Players.PlayerAdded:Connect(addPlayer)
+	
+	-- Удаляем игрока из списка, когда он выходит
+	Players.PlayerRemoving:Connect(function(player)
+		for _, label in pairs(playerListFrame:GetChildren()) do
+			if label:IsA("TextLabel") and label.Text == player.Name then
+				label:Destroy()
+			end
+		end
+	end)
+end;
+task.spawn(C_1d);
+
+return G2L["1"], require;
